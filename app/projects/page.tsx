@@ -11,14 +11,14 @@ export default async function ProjectsPage() {
 
 
     return (
-        <div className="relative pb-16">
+        <div className="relative pb-16 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
             <Navigation />
             <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
                 <div className="max-w-2xl mx-auto lg:mx-0">
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
                         Percurso Académico
                     </h2>
-                    <p className="mt-4 text-zinc-400">
+                    <p className="mt-4 text-zinc-50">
                         Alguns cursos que eu fiz ao longo do tempo.
                     </p>
                 </div>
@@ -35,7 +35,7 @@ export default async function ProjectsPage() {
                                     Licenciatura em Secretariado e
                                     Comunicação Empresarial - (2024 - presente)
                                 </h2>
-                                <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                <p className="mt-4 leading-8 duration-150 text-zinc-200 group-hover:text-zinc-300">
                                     Escola Superior de Tecnologia e Gestão de Águeda -
                                     Universidade de Aveiro (Principais diciplinas até o
                                     momento: Tec. de Secretáriado. - Aplicações de
@@ -62,7 +62,7 @@ export default async function ProjectsPage() {
                                     Bacharelado em Recursos Humanos (2020 -
                                     2023)
                                 </h2>
-                                <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                <p className="mt-4 leading-8 duration-150 text-zinc-200 group-hover:text-zinc-300">
                                     Instituição Anheguera
                                 </p>
                                 {/*
@@ -96,7 +96,7 @@ export default async function ProjectsPage() {
                                     >
                                         INTERMARCHÉ
                                     </h2>
-                                    <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                    <p className="mt-4 leading-8 duration-150 text-zinc-200 group-hover:text-zinc-300">
                                         Função: Operadora de loja
                                         (2023-2024) - 1 ano e 5 meses full time
                                     </p>
@@ -122,7 +122,7 @@ export default async function ProjectsPage() {
                                         SAAE - SERVIÇO AUTÔNOMO DE
                                         ÁGUA E ESGOTO
                                     </h2>
-                                    <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                    <p className="mt-4 leading-8 duration-150 text-zinc-200 group-hover:text-zinc-300">
                                         Função: Estágio curricular (organização
                                         documental/suporte administrativo)
                                         (2021-2022) - 8 meses full time
@@ -149,7 +149,7 @@ export default async function ProjectsPage() {
                                         FUSAR - FUNDAÇÃO DE SAÚDE DE
                                         ANGRA DOS REIS
                                     </h2>
-                                    <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                                    <p className="mt-4 leading-8 duration-150 text-zinc-200 group-hover:text-zinc-300">
                                         Função: Estágio Curricular (suporte administrativo)
                                         (2019-2020) - 9 meses part time
                                     </p>
