@@ -53,7 +53,7 @@ export default async function ProjectsPage() {
                         </Link>
                     </Card>
                     <Card>
-                        <Link href=''>
+                        <Link href='https://www.anhanguera.com'>
                             <article className="relative w-full h-full p-4 md:p-8">
                                 <h2
                                     id="featured-post"
