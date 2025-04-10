@@ -1,5 +1,5 @@
 "use client";
-import { Linkedin, Mail, Twitter } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
