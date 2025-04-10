@@ -1,7 +1,7 @@
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion"; // Corrigi para 'framer-motion' ao invés de 'motion/react'
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -11,6 +11,7 @@ type Testimonial = {
     designation: string;
     src: string;
 };
+
 export const AnimatedTestimonials = ({
     testimonials,
     autoplay = false,
@@ -19,7 +20,9 @@ export const AnimatedTestimonials = ({
     autoplay?: boolean;
 }) => {
     const [active, setActive] = useState(0);
+    const [rotations, setRotations] = useState<number[]>([]);
 
+    // Função para lidar com a navegação
     const handleNext = () => {
         setActive((prev) => (prev + 1) % testimonials.length);
     };
@@ -32,6 +35,7 @@ export const AnimatedTestimonials = ({
         return index === active;
     };
 
+    // Efeito para automatizar a navegação
     useEffect(() => {
         if (autoplay) {
             const interval = setInterval(handleNext, 5000);
@@ -39,9 +43,12 @@ export const AnimatedTestimonials = ({
         }
     }, [autoplay]);
 
-    const randomRotateY = () => {
-        return Math.floor(Math.random() * 21) - 10;
-    };
+    // Gera as rotações aleatórias de forma consistente no cliente
+    useEffect(() => {
+        const randomRotations = testimonials.map(() => Math.floor(Math.random() * 21) - 10); // valores entre -10 e 10
+        setRotations(randomRotations);
+    }, [testimonials]);
+
     return (
         <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
             <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
@@ -55,23 +62,21 @@ export const AnimatedTestimonials = ({
                                         opacity: 0,
                                         scale: 0.9,
                                         z: -100,
-                                        rotate: randomRotateY(),
+                                        rotate: rotations[index] || 0, // Usando o valor de rotação gerado
                                     }}
                                     animate={{
                                         opacity: isActive(index) ? 1 : 0.7,
                                         scale: isActive(index) ? 1 : 0.95,
                                         z: isActive(index) ? 0 : -100,
-                                        rotate: isActive(index) ? 0 : randomRotateY(),
-                                        zIndex: isActive(index)
-                                            ? 40
-                                            : testimonials.length + 2 - index,
+                                        rotate: isActive(index) ? 0 : rotations[index] || 0, // Usando a rotação consistente
+                                        zIndex: isActive(index) ? 40 : testimonials.length + 2 - index,
                                         y: isActive(index) ? [0, -80, 0] : 0,
                                     }}
                                     exit={{
                                         opacity: 0,
                                         scale: 0.9,
                                         z: 100,
-                                        rotate: randomRotateY(),
+                                        rotate: rotations[index] || 0, // Garantindo rotação consistente na saída
                                     }}
                                     transition={{
                                         duration: 0.4,
